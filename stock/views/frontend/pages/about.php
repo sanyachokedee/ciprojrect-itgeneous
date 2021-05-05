@@ -1,0 +1,2 @@
+<h1 class="bg-primary">About page</h1>
+<p class='bg-warning'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem amet odit impedit saepe, asperiores eos culpa doloremque soluta. Perspiciatis animi neque, aperiam nemo sit accusamus architecto vitae quod eius porro aliquam odit dicta beatae impedit suscipit tempore odio dolore consequatur esse. Aliquam, eligendi praesentium? Modi repudiandae adipisci nisi placeat unde?</p>
