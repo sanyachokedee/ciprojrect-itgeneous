@@ -45,8 +45,11 @@
                 </tbody>
             </table>
         </div>
-        <div class="ml-auto" style="width: 200px;">
+        <div class="mr-auto">
             <a class="btn btn-success" href="<?php echo base_url(); ?>backend/admin_lte">Admin_LTE</a>
+            <a class="btn btn-success" href="<?php echo base_url(); ?>backend/dashboard">dashboard</a>
+            <a class="btn btn-success" href="<?php echo base_url(); ?>backend/dashboardapi">dashboardapi</a>
+            <a class="btn btn-success" href="<?php echo base_url(); ?>backend/dashboardapi2">dashboardapi2</a>
             <a class="btn btn-success" href="<?php echo base_url(); ?>backend/logout">Logout</a>
         </div>
         

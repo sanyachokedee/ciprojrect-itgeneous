@@ -153,17 +153,23 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Starter Pages
+                User
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="<?php echo base_url(); ?>backend/dashboard" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
+                  <p>User Table</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url();?>backend/dashboadapi" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>User Table API</p>
+                </a>
+              </li>X
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
