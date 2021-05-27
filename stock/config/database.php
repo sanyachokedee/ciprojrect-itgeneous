@@ -77,22 +77,22 @@ $db['default'] = array(
 	'dsn'	=> '',
 
 	// Config for MS SQL Server
-	'hostname' => 'DESKTOP-HNFCI0E\SQLEXPRESS',
-	'username' => 'sa',
-	'password' => '123456',
-	'database' => 'mydb',
-	'dbdriver' => 'sqlsrv',
+	// 'hostname' => 'DESKTOP-HNFCI0E\SQLEXPRESS',
+	// 'username' => 'sa',
+	// 'password' => '123456',
+	// 'database' => 'mydb',
+	// 'dbdriver' => 'sqlsrv',
 
 	// Config for My SQL Server
-	// 'hostname' => 'localhost',
-	// 'username' => 'root',
-	// 'password' => '',
-	// 'database' => 'mydb',
-	// 'dbdriver' => 'mysqli',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'mydb',
+	'dbdriver' => 'mysqli',
 
 	'dbprefix' => '',
 	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
+	'db_debug' => (ENVIRONMENT !== 'developer'),
 	'cache_on' => FALSE,
 	'cachedir' => '',
 	'char_set' => 'utf8',

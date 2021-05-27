@@ -23,7 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+//Development
 $config['base_url'] = 'http://localhost/ciproject/';
+
+//Production
 // $config['base_url'] = 'https://www.dnsmt.com/'  ถ้าขึ้น Production จริงเอา domain มาใส่;
 
 /*
@@ -36,7 +39,10 @@ $config['base_url'] = 'http://localhost/ciproject/';
 | variable so that it is blank.
 |
 */
+
 $config['index_page'] = 'index.php';
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -382,9 +388,9 @@ $config['sess_driver'] = 'database';
 $config['sess_cookie_name'] = 'ci_sessions';
 $config['sess_expiration'] = 86400; //ให้ session นาน
 $config['sess_save_path'] = 'ci_sessions';
-$config['sess_match_ip'] = True; //เก็บ ip เฉพาะที่ไม่ซ้ำกัน
+$config['sess_match_ip'] = TRUE; //เก็บ ip เฉพาะที่ไม่ซ้ำกัน
 $config['sess_time_to_update'] = 7000; // ใช้ update นานๆ
-$config['sess_regenerate_destroy'] = True; //ใ
+$config['sess_regenerate_destroy'] = TRUE; //ใ
 
 /*
 |--------------------------------------------------------------------------

@@ -6,11 +6,16 @@ class Backend extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
+
 	}
 
     public function dashboard()
     {
-        if($this->session->userdata('logged_in'))
+        // echo "<br> dashboard";
+        // print_r($this->session);
+        // exit;
+        // if($this->session->userdata('logged_in'))
+        if(!$this->session->has_userdata('logged_in')['username'])
         {
             // echo "<pre>";
             // print_r($this->session->userdata('logged_in'));
@@ -27,18 +32,61 @@ class Backend extends CI_Controller {
             // echo "<pre>";
             // print_r($data);
             // echo "</pre>";
+            // exit;
 
             // ส่งค่าไปแสดงผลที่ View
             $data['main_content'] = 'backend/pages/dashboard';
             $data['title'] = 'รายชื่อผู้ใช้';
             $this->load->view('backend/templates/admin_template',$data);
-    
-
         }else{
-            redirect(base_url() . 'frontend/login', 'refresh');
+            redirect(base_url() . 'front/login', 'refresh');
+            // echo "else";
+        }
+    }
+    public function admin_lte()
+    {
+        // echo "<br> dashboard";
+        // print_r($this->session);
+        // exit;
+        // if($this->session->userdata('logged_in'))
+        if(!$this->session->has_userdata('logged_in')['username'])
+        {
+            // echo "<pre>";
+            // print_r($this->session->userdata('logged_in'));
+            // echo "</pre>";
+
+            // // Read user table
+            // $data['users_data'] = $this->db->order_by("id", "desc")
+            // ->select('*')
+            // ->where('users.status', '0')
+            // ->from('users')
+            // ->get()
+            // ->result();
+
+            // echo "<pre>";
+            // print_r($data);
+            // echo "</pre>";
+            // exit;
+
+            // ส่งค่าไปแสดงผลที่ View
+            $data['main_content'] = 'backend/pages/admin_lte';
+            $data['title'] = 'Admin LTE';
+            $this->load->view('backend/templates/admin_template',$data);
+        }else{
+            redirect(base_url() . 'front/login', 'refresh');
+            // echo "else";
         }
     }
 
+    // public function admin_lte()
+    // {
+    //     // redirect(base_url() . 'backend/pages/index.html', 'refresh');
+    //     // ส่งค่าไปแสดงผลที่ View
+    //     $data['main_content'] = 'backend/pages/admin_lte';
+    //     $data['title'] = 'admin_lte';
+    //     $this->load->view('backend/templates/admin_template',$data);
+    // }
+    
     public function logout()
     {
         // คำสั่งในการ destroy session

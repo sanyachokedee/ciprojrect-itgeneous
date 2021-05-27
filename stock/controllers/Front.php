@@ -9,6 +9,7 @@ class Front extends CI_Controller {
 
         // load Model เข้ามาใช้งาน
         $this->load->model('UsersModel','',true);
+
     }
 
 	public function index()
@@ -22,6 +23,7 @@ class Front extends CI_Controller {
 
 	public function about()
 	{
+        // echo "about";
 		// $this->load->view('welcome_message');
         // echo "About page";
         $data['main_content'] = 'frontend/pages/about';
@@ -39,16 +41,17 @@ class Front extends CI_Controller {
     public function login_process() 
     {
         // echo "OK"; //เอาไว้ทดสอบว่าวิ่งมาหรือเปล่า จะแสดงที่หน้าจอว่า "ok"
-        // รับค่าจากฟอร์ม
+        // // รับค่าจากฟอร์ม
         // echo $this->input->post('email');
         // echo "<br>";
         // echo $this->input->post('password');
-        
+        // exit;
+
         $email = $this->input->post('email');
         $password = $this->input->post('password');
 
         $result = $this->UsersModel->login($email, $password);
-        if($result){
+        if($result){            
             // สร้างตัวแปร array ไว้เก็บ session ของ user ที่ล็อกอินเข้ามา
             $sess_array = array();
 
@@ -64,14 +67,14 @@ class Front extends CI_Controller {
             }
 
             $this->session->set_userdata('logged_in', $sess_array);
-            echo "Login Success";
+
             //ส่งไปที่หน้า dashboard
-            // redirect('backend/dashboard','refresh');
             redirect('backend/dashboard','refresh');
             
             // echo "<pre>";
             // print_r($result);
             // echo "</pre>";
+            // exit;
         }else{
             // echo "Login Fail";
             // exit();

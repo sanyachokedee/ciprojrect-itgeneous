@@ -16,7 +16,7 @@
 
     <?php 
 		$this->load->view('frontend/includes/default_css');
-	?>
+	  ?>
 
 </head>
 <body>
