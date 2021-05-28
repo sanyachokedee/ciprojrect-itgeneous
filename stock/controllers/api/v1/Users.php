@@ -1,9 +1,8 @@
-<!-- REST API Users -->
 <?php
-// echo "Users.php";
 
 //ใช้ตัวแปร  BASEPATH
 defined('BASEPATH') or exit('No direct script access allowed');
+
 
 class Users extends CI_Controller
 {
@@ -19,24 +18,20 @@ class Users extends CI_Controller
     */
     public function users_get()
     {
+      
         $result = $this->db
             ->select('id,username,email,fullname,mobile,status')
             ->from('users')
             ->get()
             ->result();
+        
+        // return json_encode($result); // NULL
+        // $result->getQuery();
+        // echo $this->db->last_query();// show query
+        // return json_encode($result);  // NULL
+        echo json_encode($result); // OK show all json_encode
+    
 
-        // echo "<br>raw data<br>";
-        // print_r($result);
-
-        // echo "<br><br>json_encode<br>";
-        // echo $result;
-        echo json_encode($result);
-        // return $result;
-        // print_r($result_json_encode);
-
-        // echo "<br><br>json_decode<br>";
-        // $result_json_decode = json_decode($result_json_encode);
-        // print_r($result_json_decode);
     }
 
 

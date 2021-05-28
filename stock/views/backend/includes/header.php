@@ -165,7 +165,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url();?>backend/dashboadapi" class="nav-link active">
+                <a href="<?php echo base_url();?>backend/dashboardapi" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>User Table API</p>
                 </a>

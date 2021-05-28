@@ -1,5 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 class Backend extends CI_Controller
 {
@@ -45,24 +48,20 @@ class Backend extends CI_Controller
 
     public function dashboardapi()
     {
+       
         //ทดสอบข่้อมูลด้วย API 
         if (!$this->session->has_userdata('logged_in')['username']) {
             // get from api 
-            $inputJSON = file_get_contents("http://localhost/ciproject/api/v1/users/users_get/");
-            $data = json_decode($inputJSON);
-            // $data['users_data'] = $inputJSON;
-            echo "<br> inputJSON = " . $inputJSON;
-            echo "<hr>";
-            echo "<br> \$data = " . $data;
-
-            // $data['users_data']= json_decode(file_get_contents("http://localhost/ciproject/api/v1/users/users_get/")); 
-            // $inputJSON = file_get_contents('php://input');
-            // $input = json_decode($inputJSON, TRUE); //ถ้าตั้งเป้น TRUE จะทำเป็น associative array ให้
-            print_r($data['users_data']);
-            exit;
-            // exit;     
+            // $api_url = "https://jsonplaceholder.typicode.com/posts/";
+            $api_url = "http://localhost/ciproject/api/v1/users/users_get/";
+            // $data = [];
+            $inputJSON = file_get_contents($api_url);
+            // var_dump($inputJSON);
+            // $rs = json_decode($inputJSON);
+            $data['user_data'] = json_decode($inputJSON);
+             
             // ส่งค่าไปแสดงผลที่ View
-            $data['main_content'] = 'backend/pages/dashboard';
+            $data['main_content'] = 'backend/pages/news';
             $data['title'] = 'รายชื่อผู้ใช้ API';
             $this->load->view('backend/templates/admin_template', $data);
         } else {
