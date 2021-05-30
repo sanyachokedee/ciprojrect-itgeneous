@@ -26,3 +26,4 @@ composer.lock
 /tests/tests/
 /tests/results/
 /stock/config/database.php
+/stock/config/*
