@@ -26,4 +26,3 @@ composer.lock
 /tests/tests/
 /tests/results/
 /stock/config/
-.htaccess
