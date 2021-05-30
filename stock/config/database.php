@@ -86,7 +86,7 @@ $db['default'] = array(
 	// Config for My SQL Server
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '',
+	'password' => '///',
 	'database' => 'mydb',
 	'dbdriver' => 'mysqli',
 
