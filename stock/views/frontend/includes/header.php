@@ -31,7 +31,7 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="<?php echo base_url();?>frontend/login">เข้าสู่ระบบ</a></li>
+          <li><a class="getstarted scrollto" href="<?php echo base_url();?>front/login">เข้าสู่ระบบ</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
