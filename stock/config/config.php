@@ -26,6 +26,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //Development
 $config['base_url'] = 'http://localhost/ciproject/';
 
+// $config['base_url'] = 'http://localhost/ciproject/'; //production
+
 //Production
 // $config['base_url'] = 'https://www.dnsmt.com/'  ถ้าขึ้น Production จริงเอา domain มาใส่;
 
