@@ -6,7 +6,7 @@ stock/cache/*
 stock/logs/*
 !stock/logs/index.html
 
-!stock/*/.htaccess
+# !stock/*/.htaccess
 
 composer.lock
 
