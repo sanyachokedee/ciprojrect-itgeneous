@@ -25,4 +25,4 @@ composer.lock
 *.sublime-project
 /tests/tests/
 /tests/results/
-/stock/config/
+# /stock/config/
