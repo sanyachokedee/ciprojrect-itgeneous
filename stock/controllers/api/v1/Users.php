@@ -17,21 +17,13 @@ class Users extends CI_Controller
     *call http://localhost/ciproject/api/v1/users/users_get
     */
     public function users_get()
-    {
-      
+    {      
         $result = $this->db
             ->select('id,username,email,fullname,mobile,status')
             ->from('users')
             ->get()
             ->result();
-        
-        // return json_encode($result); // NULL
-        // $result->getQuery();
-        // echo $this->db->last_query();// show query
-        // return json_encode($result);  // NULL
         echo json_encode($result); // OK show all json_encode
-    
-
     }
 
 
@@ -108,29 +100,24 @@ class Users extends CI_Controller
     *ลบข้อมูล
     *call http://localhost/ciproject/api/v1/users/users_delete/id
     */
-    public function users_delete($id)
-    {
-        // รับค่าจาก Client
-        $inputJSON = file_get_contents('php://input');
-        $input = json_decode($inputJSON, TRUE); //ถ้าตั้งเป้น TRUE จะทำเป็น associative array ให้
+ // http://localhost/ciproject/api/v1/users/users_delete/6
+ public function users_delete($id)
+ {
+     $where_user_data = array(
+         'id' => $id
+     );
+     var_dump($where_user_data);
 
-        // print_r($input);
-        // exit();
-        $where_user_data = array(
-            'id' => $id,
-        );
-        echo "<br> \$where_user_data: " . $id;
-        // var_dump($this);
+     $this->db->where($where_user_data);
+     $this->db->delete('users');
 
-        $this->db->where($where_user_data);
-        $this->db->delete('users');
-
-        // exit();
-        if ($this->db->affected_rows() > 0)  // ถ้า affected_rows > 0 แสดงว่ามีการเพิ่มเข้าไป
-        {
-            echo '{"Success":{"text":"Delete user success"}}';
-        } else {
-            echo '{"Error":{"text":"Delete user failed"}}';
-        }
-    }
+     if ($this->db->affected_rows() > 0)
+     {
+         echo '{"Sucess":{"text":"Delete user success"}}';
+     }
+     else
+     {
+         echo '{"Error":{"text":"Delete user fail"}}';
+     }
+ }
 }

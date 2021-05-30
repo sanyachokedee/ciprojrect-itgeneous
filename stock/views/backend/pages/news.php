@@ -24,7 +24,7 @@
                         <th>id</th>
                         <th>Title</th>
                         <th>Body</th>
-                        <th></th>
+                        <th>option</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -36,13 +36,17 @@
                         echo "<td>{$row->id}</td>";
                         echo "<td>{$row->username}</td>";
                         echo "<td>{$row->email}</td>";
-                        echo "<td></td>";
+                        echo "<td>
+                                <i class='far fa-edit'>
+                                <a href= ".base_url()."api/v1/users/users_delete/{$row->id}>
+                                        <i class='ml-2 fas fa-trash-alt'></i></a></td>
+                                ";
                         echo "<td></td>";
                         echo "<td></td>";
                         echo "</tr>";
-                    }
+                    }                  
                     ?>
-                </tbody>
+                </tbody> 
             </table>
         </div>
         <div class="mr-auto">
@@ -54,5 +58,6 @@
         </div>
         
     </section>
-
 </div>
+
+
