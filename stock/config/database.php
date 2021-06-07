@@ -90,6 +90,14 @@ $db['default'] = array(
 	'database' => 'mydb',
 	'dbdriver' => 'mysqli',
 
+
+	//production
+	// 'hostname' => 'localhost',
+	// 'username' => 'csthai_root',
+	// 'password' => 'pA2$8q3i',
+	// 'database' => 'csthai_mydb',
+	// 'dbdriver' => 'mysqli',
+
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'developer'),

@@ -61,7 +61,7 @@ class Backend extends CI_Controller
             $data['user_data'] = json_decode($inputJSON);
              
             // ส่งค่าไปแสดงผลที่ View
-            $data['main_content'] = 'backend/pages/news';
+            $data['main_content'] = 'backend/pages/new';
             $data['title'] = 'รายชื่อผู้ใช้ API';
             $this->load->view('backend/templates/admin_template', $data);
         } else {

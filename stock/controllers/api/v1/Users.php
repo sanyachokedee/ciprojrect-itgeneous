@@ -106,7 +106,7 @@ class Users extends CI_Controller
      $where_user_data = array(
          'id' => $id
      );
-     var_dump($where_user_data);
+    //  var_dump($where_user_data);
 
      $this->db->where($where_user_data);
      $this->db->delete('users');
@@ -114,6 +114,7 @@ class Users extends CI_Controller
      if ($this->db->affected_rows() > 0)
      {
          echo '{"Sucess":{"text":"Delete user success"}}';
+         redirect('/backend/dashboardapi','refresh');
      }
      else
      {
